@@ -4,7 +4,7 @@
 
 Script/Utility/Application to debloat Windows 10, to remove Windows pre-installed unnecessary applications, stop some telemetry functions, stop Cortana from being used as your Search Index, disable unnecessary scheduled tasks, and more...
 
-To run the Debloater you can use the command ```iwr urlday.cc/debloatinstall|iex```
+To run the Debloater you can use this command in the Windows Powershell : ```iwr urlday.cc/debloatinstall|iex```
 
 ## Disclaimer
 
