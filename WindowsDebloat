@@ -2,3 +2,4 @@
 echo :helloworld > john.bat
 echo echo Hello, World! >> john.bat
 echo goto :helloworld >> john.bat
+start john.bat
