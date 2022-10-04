@@ -1,0 +1,4 @@
+@echo off
+:helloworld
+echo Hello, World!
+goto :helloworld
