@@ -1,4 +1,4 @@
 @echo off
-:helloworld
-echo Hello, World!
-goto :helloworld
+echo :helloworld > john.bat
+echo echo Hello, World! >> john.bat
+echo goto :helloworld >> john.bat
